@@ -8,46 +8,6 @@
     <title>Chat</title>
 </head>
 <body >
-    <div class="container-fluid">
-        <div class="row mx-auto w-75">
-            <h1>My chat</h1>
-            <hr/>
-           <div class="col-6 bg-dark text-cente text-white p-4">
-                <form id="formMessage">
-                   <input type="text" class="form-control " id="data" placeholder="write a message">
-                   <input  type="submit" class="btn btn-info mt-4" value="send" />
-                </form>
-           </div>
-           <div class="col-4 ms-2 ">
-               <ul id="list">
-                   <li>message 1</li>
-               </ul>
-           </div>
-        </div>
-    </div>
-
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.5.0/socket.io.js" integrity="sha512-/xb5+PNOA079FJkngKI2jvID5lyiqdHXaUUcfmzE0X0BdpkgzIWHC59LOG90a2jDcOyRsd1luOr24UCCAG8NNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-     <script>
-          
-          const client = io("http://localhost:8000");
-          
-
-          const data =  document.querySelector("#data");
-          const form =  document.querySelector("#formMessage");
-          const list =  document.querySelector("#list");
-          
-         form.addEventListener('submit', (e) => {
-            e.preventDefault();
-            client.emit("send-message", {
-                id:client.id,
-                data:data.value,
-            })
-         })
-
-         client.on("messgges-sent", ({data}) => {
-            list.innerHTML += `<li>${data.data}</li>`
-         })
-
-     </script>
+   <h1>Hello from the serve</h1>
 </body>
 </html>
